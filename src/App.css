@@ -17,3 +17,48 @@ h2, h3 {
 button:hover {
   background-color: #B57EDC;
 }
+
+/* styles.css */
+nav {
+  background-color: rgb(56, 6, 56); /* Dark background for the navbar */
+  padding: 1rem; /* Spacing around the navbar */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-around; /* Space links evenly */
+  align-items: center; /* Center items vertically */
+}
+
+nav ul {
+  list-style: none; /* Remove bullet points from list */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Display items in a row */
+}
+
+nav li {
+  margin: 0 15px; /* Space between links */
+}
+
+nav a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.2rem; /* Font size for links */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+nav a:hover {
+  color: #f0a500; /* Change color on hover */
+}
+
+nav a.active {
+  font-weight: bold; /* Bold active link */
+  /* border-bottom: 2px solid #f0a500; */
+}
+
+
+.home{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 80vh;
+}

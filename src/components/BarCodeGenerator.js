@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import Barcode from 'react-barcode';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid'; // Import UUID generator
 import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 
 const GeneratorWrapper = styled.div`
   padding: 20px;
@@ -37,12 +36,10 @@ const Button = styled.button`
 `;
 
 export default function BarCodeGenerator() {
-  const barcodeRef = useRef(null);
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [quantity, setQuantity] = useState('');
   const [barcodeValue, setBarcodeValue] = useState('');
-  const [barcodeImage, setBarcodeImage] = useState(null);
 
   const generateBarcode = async () => {
     // Generate a unique ID for the product
