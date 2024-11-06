@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import * as XLSX from 'xlsx';
 
 const InventoryWrapper = styled.div`
   padding: 20px;
@@ -32,6 +33,15 @@ const Td = styled.td`
 const Inventory = () => {
   const [inventory, setInventory] = useState([]);
 
+  const exportToExcel = () => {
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.json_to_sheet(inventory);
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Inventory');
+
+    XLSX.writeFile(workbook, 'InventoryData.xlsx');
+  }
+
   useEffect(() => {
     axios.get('http://localhost:5000/inventory')
       .then((response) => {
@@ -44,7 +54,11 @@ const Inventory = () => {
 
   return (
     <InventoryWrapper>
-      <h1>Inventory</h1>
+      <div className='excel'>
+        <h1>Inventory</h1>
+        <button onClick={exportToExcel} className='excelButton'>Download Excel</button>
+      </div>
+
       <Table>
         <thead>
           <tr>

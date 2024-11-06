@@ -62,3 +62,20 @@ nav a.active {
   text-align: center;
   height: 80vh;
 }
+
+.excel{
+  display: flex;
+  gap: 3vh;
+  align-items: center;
+}
+
+.excelButton{
+  padding: 10px 15px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  height: 10%;
+}
